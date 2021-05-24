@@ -132,6 +132,11 @@ main {
   }
   .section {
     height: 100%;
+    top: 5px;
+    &-card {
+      width: 90%;
+      height: 50%;
+    }
     img {
       max-width: 40%;
       height: 60%;
@@ -152,30 +157,29 @@ main {
       width: 40px;
     }
   }
-
-  .projects {
-    .section-content {
-      .card {
-        width: 40% !important;
-      }
-      .swiper-slide {
-        img {
-          width: auto;
-          max-height: 100%;
-        }
-      }
-    }
-  }
+  // .projects {
+  //   .section-content {
+  //     .card {
+  //       width: 40% !important;
+  //     }
+  //     .swiper-slide {
+  //       img {
+  //         width: auto;
+  //         max-height: 100%;
+  //       }
+  //     }
+  //   }
+  // }
 }
 
 .section {
   position: fixed;
-  top: 17%;
+  top: 10%;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 70%;
+  height: 80%;
   transform: translate(-150%, 0) scale(0);
   opacity: 0;
   transition: all ease 600ms;
@@ -193,11 +197,11 @@ main {
     flex-direction: row;
     justify-content: space-between;
     width: 80%;
-    height: 70%;
+    height: 90%;
     margin: 0 5%;
-    padding: 2%;
+    padding: 0 2%;
     border-top: 24px solid $primary-color;
-    border-radius: 2px;
+    border-radius: 1px;
     box-shadow: 2px 2px 5px black;
     background-color: lighten($primary-color, 15%);
 
@@ -261,31 +265,44 @@ main {
   }
   .section-content {
     display: flex;
-    flex-wrap: wrap;
-  }
-
-  .skill-badge {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     flex-wrap: wrap;
-    width: 25%;
+    padding: 0 10%;
+  }
+
+  .skill-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 10%;
     height: 30%;
-    margin: 10px;
+    margin: 0 7%;
+  }
+  .skill-badge {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80%;
+    width: 100%;
     background-image: url('../assets/icons/skills/Generica_25576.png');
     background-size: contain;
     background-repeat: no-repeat;
+    background-position: center;
     div {
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 40%;
     }
     &-img {
-      height: 100%;
-      width: auto;
+      max-height: 100%;
+      width: 20%;
     }
+  }
+  p {
+    position: relative;
+    margin: 0;
   }
 }
 
@@ -294,7 +311,7 @@ main {
     width: 100%;
     height: auto;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     flex-wrap: wrap;
     overflow-x: hidden;
     .card {
