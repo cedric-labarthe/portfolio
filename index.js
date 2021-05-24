@@ -18,7 +18,9 @@ onload = () => {
     btn.addEventListener('click', handleChangeSection);
   });
   handleCloseBtnClick();
-  swiper.init();
+  swiperFour.init();
+  swiperBicloo.init();
+  swiperGame.init();
 };
 
 initNavBtn = () => {
@@ -34,6 +36,9 @@ handleChangeSection = (e) => {
     if (activeSection) handleTranslateOut();
     handleTranslateIn(clickedElement);
     activeSection = clickedElement;
+  } else {
+    handleTranslateOut();
+    activeSection = null;
   }
 };
 
@@ -110,7 +115,6 @@ printTime = () => {
 // Swipper JS
 const swiperConf = {
   init: false,
-  direction: 'vertical',
   effect: 'slide',
   followFinger: false,
   centeredSlides: true,
@@ -133,9 +137,11 @@ const swiperConf = {
     1024: {
       with: 40,
       effect: 'slide',
-      slidesPerView: 3,
+      slidesPerView: 2,
       centeredSlides: false,
     },
   },
 };
-const swiper = new Swiper('.swiper-container', swiperConf);
+const swiperFour = new Swiper('.swiper-container-four', swiperConf);
+const swiperBicloo = new Swiper('.swiper-container-bicloo', swiperConf);
+const swiperGame = new Swiper('.swiper-container-game', swiperConf);

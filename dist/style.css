@@ -193,7 +193,7 @@ main header {
   font-family: 'Bungee', cursive;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 520px) {
   body {
     -webkit-box-orient: vertical;
     -webkit-box-direction: reverse;
@@ -226,7 +226,13 @@ main header {
   .nav-bar .time {
     height: 100%;
     width: 40px;
-    background-color: red;
+  }
+  .projects .section-content .card {
+    width: 40% !important;
+  }
+  .projects .section-content .swiper-slide img {
+    width: auto;
+    max-height: 100%;
   }
 }
 
@@ -247,8 +253,8 @@ main header {
   -webkit-transform: translate(-150%, 0) scale(0);
           transform: translate(-150%, 0) scale(0);
   opacity: 0;
-  -webkit-transition: all ease 800ms;
-  transition: all ease 800ms;
+  -webkit-transition: all ease 600ms;
+  transition: all ease 600ms;
 }
 
 .section-title {
@@ -416,12 +422,43 @@ main header {
 
 .projects .section-content {
   width: 100%;
-  height: 100%;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  overflow-x: hidden;
 }
 
-.projects .swiper-container {
+.projects .section-content .card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 25%;
-  height: 100%;
+  margin: 2% 2%;
+  background-color: #2f2f2f;
+  -webkit-transition: all ease 600ms;
+  transition: all ease 600ms;
+}
+
+.projects .section-content .card:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.projects .section-content .card img {
+  max-width: 100%;
+  height: auto;
 }
 
 .projects .swiper-slide {
@@ -437,7 +474,8 @@ main header {
 }
 
 .projects .swiper-slide img {
-  height: 100%;
+  max-width: 100%;
+  height: auto;
   -o-object-fit: cover;
      object-fit: cover;
 }
