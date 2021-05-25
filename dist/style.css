@@ -312,19 +312,30 @@ main {
   width: 100%;
   height: 90%;
   padding: 2% 0;
+  overflow-x: hidden;
 }
 
-.profil .section-content div {
+.profil .section-content-head {
+  opacity: 0;
+  -webkit-transform: translateX(150%);
+          transform: translateX(150%);
+  -webkit-transition: all ease 1500ms;
+  transition: all ease 1500ms;
   -ms-flex-item-align: end;
       align-self: flex-end;
   text-align: end;
 }
 
-.profil .section-content div h1 {
+.profil .section-content-head h1 {
   font-size: 2vw;
 }
 
 .profil .section-content p {
+  opacity: 0;
+  -webkit-transform: translateX(-150%);
+          transform: translateX(-150%);
+  -webkit-transition: all ease 1500ms;
+  transition: all ease 1500ms;
   margin: 2% 0;
   padding: 1%;
   border-radius: 2px;
@@ -332,6 +343,9 @@ main {
 }
 
 .profil .section-content .contact-links {
+  opacity: 0;
+  -webkit-transition: opacity ease 2000ms;
+  transition: opacity ease 2000ms;
   -ms-flex-item-align: center;
       align-self: center;
   display: -webkit-box;

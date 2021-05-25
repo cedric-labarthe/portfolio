@@ -7,12 +7,18 @@ let allNavBtn = null;
 
 let closeBtn = null;
 
+let profilHead = null;
+let profilText = null;
+let profilLink = null;
+
 const date = new Date();
 let dateDisplay = null;
 
 onload = () => {
   printTime();
   handleTranslateIn(activeSection);
+  initProfil();
+  handleProfilTranslateIn();
   initNavBtn();
   allNavBtn.forEach((btn) => {
     btn.addEventListener('click', handleChangeSection);
@@ -28,6 +34,20 @@ initNavBtn = () => {
   skillBtn = document.getElementById('skill-btn');
   projectBtn = document.getElementById('project-btn');
   allNavBtn = [profilBtn, skillBtn, projectBtn];
+};
+
+initProfil = () => {
+  profilHead = document.getElementById('profil-head');
+  profilText = document.getElementById('profil-text');
+  profilLink = document.getElementById('profil-link');
+};
+
+handleProfilTranslateIn = () => {
+  profilHead.style.transform = 'translateX(0)';
+  profilHead.style.opacity = '1';
+  profilText.style.transform = 'translateX(0)';
+  profilText.style.opacity = '1';
+  profilLink.style.opacity = '1';
 };
 
 handleChangeSection = (e) => {
