@@ -11,19 +11,23 @@ let profilHead = null;
 let profilText = null;
 let profilLink = null;
 
+let skillList = null;
+
 const date = new Date();
 let dateDisplay = null;
 
 onload = () => {
-  printTime();
-  handleTranslateIn(activeSection);
-  initProfil();
-  handleProfilTranslateIn();
+  initDomEl();
   initNavBtn();
+  printTime();
+
+  handleTranslateIn(activeSection);
+  handleProfilTranslateIn();
   allNavBtn.forEach((btn) => {
     btn.addEventListener('click', handleChangeSection);
   });
   handleCloseBtnClick();
+
   swiperFour.init();
   swiperBicloo.init();
   swiperGame.init();
@@ -36,10 +40,11 @@ initNavBtn = () => {
   allNavBtn = [profilBtn, skillBtn, projectBtn];
 };
 
-initProfil = () => {
+initDomEl = () => {
   profilHead = document.getElementById('profil-head');
   profilText = document.getElementById('profil-text');
   profilLink = document.getElementById('profil-link');
+  skillList = document.getElementById('skill-list');
 };
 
 handleProfilTranslateIn = () => {
@@ -50,8 +55,26 @@ handleProfilTranslateIn = () => {
   profilLink.style.opacity = '1';
 };
 
+handleProfilTranslateOut = () => {
+  profilHead.style.transform = 'translateX(150%)';
+  profilHead.style.opacity = '0';
+  profilText.style.transform = 'translateX(-150%)';
+  profilText.style.opacity = '0';
+  profilLink.style.opacity = '0';
+  console.log('translateout');
+};
+
+handleProfilChange = (target) => {
+  if (activeSection === 'profil') handleProfilTranslateOut();
+  if (activeSection === 'skill') skillList.style.opacity = 0;
+  if (target === 'profil') handleProfilTranslateIn();
+  if (target === 'skill') skillList.style.opacity = 1;
+};
+
 handleChangeSection = (e) => {
   const clickedElement = e.target.id.split('-')[0];
+  handleProfilChange(clickedElement);
+  console.log(activeSection);
   if (clickedElement !== activeSection) {
     if (activeSection) handleTranslateOut();
     handleTranslateIn(clickedElement);

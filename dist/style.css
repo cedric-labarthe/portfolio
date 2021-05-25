@@ -319,8 +319,8 @@ main {
   opacity: 0;
   -webkit-transform: translateX(150%);
           transform: translateX(150%);
-  -webkit-transition: all ease 1500ms;
-  transition: all ease 1500ms;
+  -webkit-transition: all ease 1500ms 200ms;
+  transition: all ease 1500ms 200ms;
   -ms-flex-item-align: end;
       align-self: flex-end;
   text-align: end;
@@ -334,8 +334,8 @@ main {
   opacity: 0;
   -webkit-transform: translateX(-150%);
           transform: translateX(-150%);
-  -webkit-transition: all ease 1500ms;
-  transition: all ease 1500ms;
+  -webkit-transition: all ease 1500ms 200ms;
+  transition: all ease 1500ms 200ms;
   margin: 2% 0;
   padding: 1%;
   border-radius: 2px;
@@ -385,6 +385,9 @@ main {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   padding: 0 10%;
+  opacity: 0;
+  -webkit-transition: opacity ease 2000ms;
+  transition: opacity ease 2000ms;
 }
 
 .skills .skill-container {
