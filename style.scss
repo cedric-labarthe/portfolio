@@ -1,5 +1,5 @@
 @mixin btn-hover {
-  color: black;
+  // color: black;
   background-color: red;
   border-color: white;
   transform: scale(1.2);
@@ -24,7 +24,9 @@ body {
   h1,
   h2,
   h3 {
-    font-family: 'PT Mono', monospace;
+    // font-family: 'PT Mono', monospace;
+    font-family: 'Open Sans', sans-serif;
+
     margin: 0;
     user-select: none;
   }
@@ -39,16 +41,6 @@ main {
   align-items: center;
   width: 100%;
   height: 100%;
-
-  header {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    margin-top: 1%;
-    white-space: nowrap;
-  }
 }
 
 .nav-bar {
@@ -90,7 +82,7 @@ main {
     border-color: red;
     border-radius: 8px;
     margin: 15px 15px;
-    transition: all ease 600ms;
+    transition: all ease 300ms;
     &:hover {
       @include btn-hover;
     }
@@ -115,7 +107,7 @@ main {
     margin: 5px;
     border: solid 2px red;
     border-radius: 50%;
-    transition: all ease 600ms;
+    transition: all ease 300ms;
 
     &:hover {
       @include btn-hover;
@@ -182,7 +174,7 @@ main {
   height: 80%;
   transform: translate(-150%, 0) scale(0);
   opacity: 0;
-  transition: all ease 600ms;
+  transition: all ease 500ms;
 
   &-title {
     position: absolute;
@@ -235,7 +227,15 @@ main {
     align-items: flex-start;
     justify-content: space-between;
     width: 100%;
-    height: 100%;
+    height: 90%;
+    padding: 2% 0;
+    div {
+      align-self: flex-end;
+      text-align: end;
+      h1 {
+        font-size: 2vw;
+      }
+    }
     p {
       margin: 2% 0;
       padding: 1%;
@@ -307,6 +307,10 @@ main {
 }
 
 .projects {
+  .section-card {
+    padding: 0;
+    margin: 0;
+  }
   .section-content {
     width: 100%;
     height: auto;
