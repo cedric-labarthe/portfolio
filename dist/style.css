@@ -2,6 +2,7 @@ html {
   background-image: url("../assets/images/black-texture.jpg");
   background-size: 100%;
   color: white;
+  height: -webkit-fill-available;
 }
 
 body {
@@ -15,19 +16,29 @@ body {
   margin: 0;
   padding: 0;
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
   overflow: hidden;
 }
 
 body h1,
 body h2,
 body h3 {
+  font-family: 'PT Mono', monospace;
   font-family: 'Open Sans', sans-serif;
   margin: 0;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+}
+
+body h1 {
+  font-size: 2rem;
+}
+
+body h3 {
+  font-size: 1rem;
 }
 
 body p {
@@ -53,6 +64,7 @@ main {
 }
 
 .nav-bar {
+  position: fixed;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -172,47 +184,6 @@ main {
   font-family: 'Bungee', cursive;
 }
 
-@media screen and (max-width: 520px) {
-  body {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: reverse;
-        -ms-flex-direction: column-reverse;
-            flex-direction: column-reverse;
-  }
-  .section {
-    height: 100%;
-    top: 5px;
-  }
-  .section-card {
-    width: 90%;
-    height: 50%;
-  }
-  .section img {
-    max-width: 40%;
-    height: 60%;
-  }
-  .nav-bar {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    z-index: 300;
-    height: 60px;
-    width: 100%;
-    -webkit-box-shadow: -2px 0 4px #2f2f2f;
-            box-shadow: -2px 0 4px #2f2f2f;
-  }
-  .nav-bar-btn {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-  }
-  .nav-bar .time {
-    height: 100%;
-    width: 40px;
-  }
-}
-
 .section {
   position: fixed;
   top: 10%;
@@ -319,23 +290,23 @@ main {
   opacity: 0;
   -webkit-transform: translateX(150%);
           transform: translateX(150%);
-  -webkit-transition: all ease 1500ms 200ms;
-  transition: all ease 1500ms 200ms;
+  -webkit-transition: opacity 3000ms 400ms, -webkit-transform 1500ms ease-out 200ms;
+  transition: opacity 3000ms 400ms, -webkit-transform 1500ms ease-out 200ms;
+  transition: transform 1500ms ease-out 200ms, opacity 3000ms 400ms;
+  transition: transform 1500ms ease-out 200ms, opacity 3000ms 400ms, -webkit-transform 1500ms ease-out 200ms;
   -ms-flex-item-align: end;
       align-self: flex-end;
   text-align: end;
-}
-
-.profil .section-content-head h1 {
-  font-size: 2vw;
 }
 
 .profil .section-content p {
   opacity: 0;
   -webkit-transform: translateX(-150%);
           transform: translateX(-150%);
-  -webkit-transition: all ease 1500ms 200ms;
-  transition: all ease 1500ms 200ms;
+  -webkit-transition: opacity 3000ms 450ms, -webkit-transform 1500ms ease-out 150ms;
+  transition: opacity 3000ms 450ms, -webkit-transform 1500ms ease-out 150ms;
+  transition: transform 1500ms ease-out 150ms, opacity 3000ms 450ms;
+  transition: transform 1500ms ease-out 150ms, opacity 3000ms 450ms, -webkit-transform 1500ms ease-out 150ms;
   margin: 2% 0;
   padding: 1%;
   border-radius: 2px;
@@ -344,8 +315,8 @@ main {
 
 .profil .section-content .contact-links {
   opacity: 0;
-  -webkit-transition: opacity ease 2000ms;
-  transition: opacity ease 2000ms;
+  -webkit-transition: opacity 2500ms 350ms;
+  transition: opacity 2500ms 350ms;
   -ms-flex-item-align: center;
       align-self: center;
   display: -webkit-box;
@@ -386,8 +357,8 @@ main {
       flex-wrap: wrap;
   padding: 0 10%;
   opacity: 0;
-  -webkit-transition: opacity ease 2000ms;
-  transition: opacity ease 2000ms;
+  -webkit-transition: opacity ease 2500ms;
+  transition: opacity ease 2500ms;
 }
 
 .skills .skill-container {
@@ -425,6 +396,13 @@ main {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
+  -webkit-transition: all 450ms 60ms;
+  transition: all 450ms 60ms;
+}
+
+.skills .skill-badge:hover {
+  -webkit-transform: rotate(-2deg) scale(1.1);
+          transform: rotate(-2deg) scale(1.1);
 }
 
 .skills .skill-badge div {
@@ -440,8 +418,8 @@ main {
 }
 
 .skills .skill-badge-img {
-  max-height: 100%;
-  width: 20%;
+  height: auto;
+  max-width: 35%;
 }
 
 .skills p {
@@ -460,9 +438,9 @@ main {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   overflow-x: hidden;
@@ -472,14 +450,17 @@ main {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 25%;
-  margin: 2% 2%;
+  width: 50%;
   background-color: #2f2f2f;
   -webkit-transition: all ease 600ms;
   transition: all ease 600ms;
@@ -495,7 +476,13 @@ main {
   height: auto;
 }
 
-.projects .swiper-slide {
+.projects .swiper-container {
+  opacity: 0;
+  -webkit-transition: opacity ease-in-out 1850ms 100ms;
+  transition: opacity ease-in-out 1850ms 100ms;
+}
+
+.projects .swiper-container .swiper-slide {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -507,7 +494,7 @@ main {
           align-items: center;
 }
 
-.projects .swiper-slide img {
+.projects .swiper-container .swiper-slide img {
   max-width: 100%;
   height: auto;
   -o-object-fit: cover;
@@ -516,4 +503,69 @@ main {
 
 .projects p {
   display: none;
+}
+
+@media screen and (max-width: 520px) {
+  body {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+  body h1 {
+    font-size: 1.5rem;
+  }
+  body h3 {
+    font-size: 0.51rem;
+  }
+  .section {
+    height: 100%;
+    position: fixed;
+    top: 5px;
+  }
+  .section-card {
+    top: -5%;
+    width: 90%;
+    height: 75%;
+  }
+  .section img {
+    max-width: 40%;
+    height: 60%;
+  }
+  .nav-bar {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    z-index: 300;
+    height: 60px;
+    width: 100%;
+    -webkit-box-shadow: -2px 0 4px #2f2f2f;
+            box-shadow: -2px 0 4px #2f2f2f;
+  }
+  .nav-bar-btn {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .nav-bar .time {
+    height: 100%;
+    width: 40px;
+  }
+  .skills .section-content {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .skills .skill-container {
+    width: 30%;
+    height: 30%;
+  }
+  .projects .section-content .card {
+    width: 90%;
+  }
+  .projects .section-content .swiper-slide img {
+    width: auto;
+    max-height: 100%;
+  }
 }
