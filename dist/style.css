@@ -358,6 +358,7 @@ main {
   width: 90%;
   padding: 0 10%;
   opacity: 0;
+  overflow-y: auto;
   -webkit-transition: opacity ease 2500ms;
   transition: opacity ease 2500ms;
 }
