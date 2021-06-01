@@ -236,6 +236,7 @@ main {
     justify-content: flex-start;
     align-items: center;
     flex-wrap: wrap;
+    width: 90%;
     padding: 0 10%;
     opacity: 0;
     transition: opacity ease 2500ms;
@@ -264,14 +265,11 @@ main {
     &:hover {
       transform: rotate(-2deg) scale(1.1);
     }
-    div {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    &-img {
+
+    svg {
       height: auto;
       max-width: 35%;
+      fill: rgba(255, 255, 255, 0.719);
     }
   }
   p {

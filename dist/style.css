@@ -355,6 +355,7 @@ main {
           align-items: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  width: 90%;
   padding: 0 10%;
   opacity: 0;
   -webkit-transition: opacity ease 2500ms;
@@ -405,21 +406,10 @@ main {
           transform: rotate(-2deg) scale(1.1);
 }
 
-.skills .skill-badge div {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.skills .skill-badge-img {
+.skills .skill-badge svg {
   height: auto;
   max-width: 35%;
+  fill: rgba(255, 255, 255, 0.719);
 }
 
 .skills p {
