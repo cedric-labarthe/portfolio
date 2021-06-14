@@ -1,3 +1,16 @@
+#loader {
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  min-height: 100vh;
+  z-index: 1000;
+  background-color: black;
+}
+
+#loader span {
+  color: green;
+}
+
 html {
   background-image: url("../assets/images/black-texture.jpg");
   background-size: 100%;

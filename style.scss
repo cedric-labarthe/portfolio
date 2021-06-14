@@ -7,6 +7,18 @@
 
 $primary-color: #2f2f2f;
 
+#loader {
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  min-height: 100vh;
+  z-index: 1000;
+  background-color: black;
+  span {
+    color: green;
+  }
+}
+
 html {
   background-image: url('../assets/images/black-texture.jpg');
   background-size: 100%;
@@ -183,6 +195,7 @@ main {
 }
 
 .profil {
+  // transform: translate(-150%, 0) scale(0);
   .section-content {
     display: flex;
     flex-direction: column;
